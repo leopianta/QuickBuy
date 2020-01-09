@@ -39,6 +39,7 @@ namespace QuickBuy.Repositorio.Repositorios
         public IEnumerable<TEntity> ObterTodos()
         {
             return _quickBuyContexto.Set<TEntity>().ToList();
+
         }
 
         public void Remover(TEntity entity)
