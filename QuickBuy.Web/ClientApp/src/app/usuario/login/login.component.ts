@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Usuario } from "../../model/usuario";
 import { Router, ActivatedRoute } from "@angular/router";
+import { UsuarioService } from "src/services/usuario/usuario.service";
 
 @Component({
     selector: "app-login",
@@ -11,19 +12,40 @@ import { Router, ActivatedRoute } from "@angular/router";
 export class LoginComponent implements OnInit {
     public usuario;
     public returnUrl: string;
+    public mensagem: string;
+    public ativar_spinner: boolean;
 
-    constructor(private router: Router, private activatedRouter: ActivatedRoute) {        
+    constructor(private router: Router, private activatedRouter: ActivatedRoute, private usuarioServico: UsuarioService) {        
     }
     
     ngOnInit(): void {
-        this.usuario = new Usuario();
         this.returnUrl = this.activatedRouter.snapshot.queryParams["returnUrl"];
+        this.usuario = new Usuario();
     }
 
     entrar() {
-        if (this.usuario.email == "leo@gmail.com" && this.usuario.senha == "123") {
-            sessionStorage.setItem("usuario-autenticado", "1");
-            this.router.navigate([this.returnUrl])
-        }
+        this.ativar_spinner = true;
+        this.usuarioServico.verificarUsuario(this.usuario)
+        .subscribe(
+            usuario_json => {
+                this.usuarioServico.usuario = usuario_json
+                if(this.returnUrl == null){
+                    this.router.navigate(['/']);
+                }else{
+                    this.router.navigate([this.returnUrl]);
+                }
+            },
+            err => {
+                console.log(err.error);
+                this.mensagem = err.error;
+                this.ativar_spinner = false;
+            }
+        );
+        
+        
+        // if (this.usuario.email == "leo@gmail.com" && this.usuario.senha == "123") {
+        //     sessionStorage.setItem("usuario-autenticado", "1");
+        //     this.router.navigate([this.returnUrl])
+        // }
     }
 }

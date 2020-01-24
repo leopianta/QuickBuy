@@ -7,10 +7,26 @@ import { Usuario } from "src/app/model/usuario";
     providedIn:"root"
 })
 export class UsuarioService{
-
+    
     private baseURL: string;
+    private _usuario: Usuario;
+
+    set usuario(usuario: Usuario){
+        sessionStorage.setItem("usuario-autenticado", JSON.stringify(usuario));
+        this._usuario = usuario;
+    }
+
+
+    get usuario(): Usuario{
+        let usuario_json = sessionStorage.getItem("usuario-autenticado");
+        this._usuario = JSON.parse(usuario_json);
+        return this._usuario;
+    }
+    
+
     constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string){
-        this.baseURL = baseUrl;
+        baseUrl = "https://localhost:44398/"; //retirar depois       
+        this.baseURL = baseUrl;              
     }    
 
     public verificarUsuario(usuario: Usuario): Observable<Usuario>{
@@ -18,7 +34,16 @@ export class UsuarioService{
         var body = {
             email: usuario.email,
             senha: usuario.senha
-        }        
-        return this.http.post<Usuario>(this.baseURL + "api/usuario", body, { headers });
+        }          
+        return this.http.post<Usuario>(this.baseURL + "api/usuario/VerificarUsuario", body, { headers });
     }    
+
+    public usuario_autenticado():boolean{
+        return this._usuario != null && this._usuario.email != "" && this._usuario.senha != "";
+    }
+
+    public limpar_sessao(){
+        sessionStorage.setItem("usuario-autenticado", "");
+        this._usuario = null;
+    }
 }

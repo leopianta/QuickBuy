@@ -36,7 +36,9 @@ namespace QuickBuy.Web
                                                     option.UseLazyLoadingProxies()
                                                           .UseMySql(connectionString, m =>
                                                                     m.MigrationsAssembly("QuickBuy.Repositorio")));
+
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
+            services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -63,7 +65,10 @@ namespace QuickBuy.Web
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
-            app.UseCors(option => option.AllowAnyOrigin());
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("https://localhost:44398").AllowAnyOrigin().AllowAnyHeader();
+            });
 
             app.UseMvc(routes =>
             {
