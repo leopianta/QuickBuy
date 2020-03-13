@@ -46,4 +46,15 @@ export class UsuarioService{
         sessionStorage.setItem("usuario-autenticado", "");
         this._usuario = null;
     }
+
+  public cadastrarUsuario(usuario: Usuario): Observable<Usuario> {
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    var body = {
+      email: usuario.email,
+      senha: usuario.senha,
+      nome: usuario.nome,
+      sobrenome: usuario.sobrenome
+    }
+     return this.http.post<Usuario>(this.baseURL + "api/usuario", body, { headers });
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "compileOnSave": true,
+  "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -15,7 +15,6 @@
     "lib": [
       "es2017",
       "dom"
-    ],
-    "charset": "utf8"
+    ]
   }
 }

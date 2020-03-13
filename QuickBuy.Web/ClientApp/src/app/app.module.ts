@@ -11,14 +11,16 @@ import { ProdutoComponent } from './produto/produto.component';
 import { LoginComponent } from './usuario/login/login.component';
 import { GuardaRotas } from './autorizacao/guarda.rotas';
 import { UsuarioService } from 'src/services/usuario/usuario.service';
+import { CadastroUsuarioComponent } from './usuario/cadastro/cadastro.usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-        ProdutoComponent,
-        LoginComponent
+    ProdutoComponent,
+    LoginComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,8 +28,9 @@ import { UsuarioService } from 'src/services/usuario/usuario.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-        { path: 'produto', component: ProdutoComponent, canActivate: [GuardaRotas] },
-        { path: 'entrar', component: LoginComponent },
+      { path: 'produto', component: ProdutoComponent, canActivate: [GuardaRotas] },
+      { path: 'entrar', component: LoginComponent },
+      { path: 'novo-usuario', component: CadastroUsuarioComponent },
     ])
   ],
   providers: [UsuarioService],
