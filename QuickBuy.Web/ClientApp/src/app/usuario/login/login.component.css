@@ -6,10 +6,13 @@
 }
 
 
-  .form-signin input[type="email"] {
+  .form-signin input {
     margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    border-color: #fbfbfb;
+  }
+
+  .form-signin input:hover {
+    border-color:#b7b7b7;
   }
 
   .form-signin .form-control{
