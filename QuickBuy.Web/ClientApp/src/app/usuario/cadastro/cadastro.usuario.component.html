@@ -94,10 +94,14 @@
         Cadastrar
       </button>
       <div>
-      <a class="col-3 btn btn-outline-info align-content-center" [routerLink] = '["/entrar"]'>Voltar</a>
+      <a class="col-3 btn btn-outline-info align-content-center mb-2" [routerLink] = '["/entrar"]'>Voltar</a>
       </div>
       <div class="alert alert-danger" *ngIf="mensagem">
         {{mensagem}}
+      </div>
+      <div class="alert alert-success" *ngIf="usuarioCadastrado">
+        Usuario cadastrado com sucesso!</br>
+        <a class="alert-link" [routerLink]='["/entrar"]'>Clique aqui</a> para entrar no sistema com a sua conta.
       </div>
     </div>
 
