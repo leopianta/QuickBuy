@@ -6,10 +6,15 @@
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public decimal Preco { get; set; }
+        public string NomeArquivo { get; set; }
 
         public override void Validate()
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(Nome))
+                AdicionarMensagem("Nome do produto não foi informado!");
+
+            if (string.IsNullOrEmpty(Descricao))
+                AdicionarMensagem("Descricao do produto não foi informada!");
         }
     }
 }

@@ -8,12 +8,12 @@ import { Produto } from "src/app/model/produto";
   providedIn: "root"
 })
 
-export class ProdutoService implements OnInit {   
-
+export class ProdutoService implements OnInit {
   private _baseUrl: string;
   public produtos: Produto[];
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    baseUrl = "https://localhost:44398/"; //retirar depois   
     this._baseUrl = baseUrl;
   }
 
@@ -26,7 +26,7 @@ export class ProdutoService implements OnInit {
   }
 
   public cadastrar(produto: Produto): Observable<Produto> {
-     return this.http.post<Produto>(this._baseUrl + "api/produto/cadastrar", JSON.stringify(produto), { headers: this.headers })
+     return this.http.post<Produto>(this._baseUrl + "api/produto", JSON.stringify(produto), { headers: this.headers })
   }
 
   public salvar(produto: Produto): Observable<Produto> {    
@@ -44,6 +44,12 @@ export class ProdutoService implements OnInit {
   public obterProduto(produtoId: number): Observable<Produto> {
     return this.http.get<Produto>(this._baseUrl + "api/produto");
   }
+
+  public enviarArquivo(arquivoSelecionado: File): Observable<string> {
+    const formData: FormData = new FormData();
+    formData.append("arquivoEnviado", arquivoSelecionado, arquivoSelecionado.name);
+    return this.http.post<string>(this._baseUrl + "api/produto/EnviarArquivo", formData);
+  }   
 
 
 }

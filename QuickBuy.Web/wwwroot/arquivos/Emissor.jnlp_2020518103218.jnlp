@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+    CHECK LIST GERAÇÃO DE BUILD
+    1-> Alterar a versão da aplicação
+    2-> Alterar o codebase do JNLP
+    3-> Alterar o titulo da aplicação para o ambiente que será gerado
+    4-> Alterar o jar apontado pelo JNLP para o novo jar com a nova versão
+    5-> Marcar as property corretas para o ambiente que será gerado
+-->
+
+<!-- 2-> Alterar o codebase do JNLP -->
+<jnlp spec="1.0+" codebase="https://emissor.ca.inf.br/prod" href="Emissor.jnlp">     
+    <information>
+        
+        <!-- 3-> Alterar o titulo da aplicação para o ambiente que será gerado -->
+        <title>Assistente de Emissão de Certificado SOLUTI</title>
+        <vendor>Soluti Certificação Digital</vendor>
+        <homepage href="https://soluti.com.br"/>         
+        <description>Sistema para emissão de certificados digitais Soluti</description>
+        <description kind="short">Assistente de Emissão de Certificado SOLUTI</description>
+        
+        <icon href="logo_soluti.png" kind="splash"/>
+        <icon href="64.png" kind="default"/>
+        
+    </information>     
+    <update check="always"/>
+    <security>
+        <all-permissions/>     
+    </security>
+    <resources>
+        <j2se version="1.7+"/>
+        <!-- 4-> Alterar o jar apontado pelo JNLP para o novo jar com a nova versão -->
+        <jar href="baixa-de-certificados.jar" main="true"/>
+	<jar href="lib/bcpkix-jdk15on-150.jar" download="lazy" />
+	<jar href="lib/bcprov-jdk14-150.jar" download="lazy" />
+	<jar href="lib/commons-net-3.4.jar" download="lazy" />
+	<jar href="lib/pkcs11wrapper.jar" download="lazy" />
+	<jar href="lib/Sign-soluti-1.1.1.jar" download="lazy" />
+	<jar href="lib/commons-io-2.4.jar" download="lazy" />
+	<jar href="lib/httpclient-4.5.2.jar" download="lazy" />
+	<jar href="lib/httpcore-4.4.4.jar" download="lazy" />
+	<jar href="lib/commons-logging-1.1.1.jar" download="lazy" />
+	<jar href="lib/json-simple-1.1.1.jar" download="lazy" />   
+        <!-- 5-> Marcar as property corretas para o ambiente que será gerado -->
+        
+        <!-- PRODUÇÃO -->
+        <property name="jnlp.linkPool" value="https://arpartner.acsoluti.com.br/"/>
+        <property name="jnlp.segundoLinkPool" value="https://ardigisec.acsoluti.com.br/"/>
+        <property name="jnlp.homologacao" value="false"/>
+        
+        <!-- HOMOLOGAÇÃO -->
+        <!--        <property name="jnlp.linkPool" value="https://arpartnerhom.acsoluti.com.br/"/>
+        <property name="jnlp.segundoLinkPool" value="https://ardigisechom.acsoluti.com.br/"/>
+        <property name="jnlp.homologacao" value="true"/>-->
+        
+        <!-- DESENVOLVIMENTO -->
+        <!--        <property name="jnlp.linkPool" value="https://crm-dev.lab.ca.inf.br/"/>
+        <property name="jnlp.segundoLinkPool" value="https://crm-dev.solutiny.br/"/>
+        <property name="jnlp.homologacao" value="true"/>-->
+        
+        <!-- IPV4 -->
+        <property name="java.net.preferIPv4Stack" value="true"/>
+	<property name="jnlp.renovacao" value="false"/>
+    </resources>
+    <application-desc main-class="br.com.soluti.baixadecertificados.run.InstallCertificado">
+    </application-desc> 
+</jnlp>

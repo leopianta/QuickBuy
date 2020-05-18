@@ -1,1 +1,19 @@
 @import url(../login/login.component.css);
+
+.invalid-feedback{
+    display: block;
+    color: white;
+    padding: 5px;
+    width: 26em;
+    background-color: rgb(211, 129, 129);
+    border-radius: 4px;
+}
+
+.valid-feedback{
+    display: block;
+    color: white;
+    padding: 5px;
+    width: 26em;
+    background-color: rgb(96, 169, 96);
+    border-radius: 4px;
+}

@@ -1,0 +1,224 @@
+﻿01 - Introdução ao ASPNET Core - [33 min]
+https://vimeo.com/eduardopires/caspnetcore-01
+Senha:
+CNetCoreNG-OS
+ 
+02 - Configurando o ambiente - [22 min]
+https://vimeo.com/eduardopires/caspnetcore-02
+Senha:
+CNetCoreNG-JX
+ 
+03 - Criando minha primeira aplicação ASPNET Core - [28 min]
+https://vimeo.com/eduardopires/caspnetcore-03
+Senha:
+CNetCoreNG-HE
+ 
+04 - Classe Startup e Middlewares - [43 min]
+https://vimeo.com/eduardopires/caspnetcore-04
+Senha:
+CNetCoreNG-BE
+ 
+05 - Padrão MVC e Funcionalidades do ASPNET MVC Core - [1h36 min]
+https://vimeo.com/eduardopires/caspnetcore-05
+Senha:
+CNetCoreNG-FR
+ 
+06 - Apresentando o Entity Framework Core - [46 min]
+https://vimeo.com/eduardopires/caspnetcore-06
+Senha:
+CNetCoreNG-XS
+ 
+07 - Identity 3.0 e Segurança no ASPNET Core - [1h03 min]
+https://vimeo.com/eduardopires/caspnetcore-07
+Senha:
+CNetCoreNG-EB
+ 
+08 - Ferramentas de Front-End - [38 min]
+https://vimeo.com/eduardopires/caspnetcore-08
+Senha:
+CNetCoreNG-ZP
+ 
+09 - Iniciando o Desenvolvimento da Aplicação Eventos.IO - [53 min]
+https://vimeo.com/eduardopires/caspnetcore-09
+Senha:
+CNetCoreNG-XU
+ 
+10 - Modelando o Domínio - Entidades e Validações [1h47 min]
+https://vimeo.com/eduardopires/caspnetcore-10
+Senha:
+CNetCoreNG-VE
+ 
+11 - Revisitando o Domínio - Implementando CQRS - [2h40 min]
+https://vimeo.com/eduardopires/caspnetcore-11
+Senha:
+CNetCoreNG-PW
+ 
+12 - Tornando o domínio mapeavel para o banco de dados - [58 min]
+https://vimeo.com/eduardopires/caspnetcore-12
+Senha:
+CNetCoreNG-AS
+ 
+13 - Criando a camada de Dados - [01h17 min]
+https://vimeo.com/eduardopires/caspnetcore-13
+Senha:
+CNetCoreNG-ZX
+ 
+14 - Criando a camada de Aplicação - [1h20 min]
+https://vimeo.com/eduardopires/caspnetcore-14
+Senha:
+CNetCoreNG-VB
+ 
+15 - Desenvolvendo o projeto MVC (Camada de Apresentação) - [2h05 min]
+https://vimeo.com/eduardopires/caspnetcore-15
+Senha:
+CNetCoreNG-NM
+ 
+16 - Complementando as funcionalidades de Apresentação - [3h01 min]
+https://vimeo.com/eduardopires/caspnetcore-16
+Senha:
+CNetCoreNG-XC
+ 
+17 - Finalizando as funcionalidades de Apresentação - [3h41 min]
+https://vimeo.com/eduardopires/caspnetcore-17
+Senha:
+CNetCoreNG-BN
+ 
+18 - Tratamento e Log de Erros e Auditoria no MVC - [01h59 min]
+https://vimeo.com/eduardopires/caspnetcore-18
+Senha:
+CNetCoreNG-FG
+ 
+19 - Camada de Serviços ASPNET WebAPI - [3h51 min]
+https://vimeo.com/eduardopires/caspnetcore-19
+Senha:
+CNetCoreNG-JK
+ 
+20 - Introdução ao Angular - [1h09 min]
+https://vimeo.com/eduardopires/caspnetcore-20
+Senha:
+CNetCoreNG-LK
+ 
+21 - Angular Startup Template - [01h05 min]
+https://vimeo.com/eduardopires/caspnetcore-21
+Senha:
+CNetCoreNG-KG
+ 
+22 - Rotas e recursos de navegação do Angular - [02h01 min]
+https://vimeo.com/eduardopires/caspnetcore-22
+Senha:
+CNetCoreNG-GD
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+AULAS AO VIVO
+
+
+23 - Revisão e criação de formulário de inscrição - [07h48 min]
+https://vimeo.com/eduardopires/caspnetcore-04172-23
+Senha:
+CNetCoreNG-FX-0417
+
+
+24 - Modulos do Angular, Funcionalidades completas, WebAPI com MediatR - [04h48 min]
+https://vimeo.com/eduardopires/caspnetcore-26
+Senha:
+CNetCoreNG-TF
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+ATUALIZAÇÕES E NOVAS AULAS
+
+
+Novidades no Back-End - MediatR, Event Sourcing e melhorias - [0h45 min]
+https://vimeo.com/eduardopires/caspnetcore-up-1
+Senha:
+CNetCoreNGUP-GS
+
+
+Criação de Módulos e Lazy Loading no Angular - [1h07 min]
+https://vimeo.com/eduardopires/caspnetcore-up-2
+Senha:
+CNetCoreNGUP-VE
+
+
+Testes de Unidade e de Integração - [2h07 min]
+https://vimeo.com/eduardopires/caspnetcore-up-3
+Senha:
+CNetCoreNGUP-FA
+
+
+BDD e Testes Automatizados com Selenium - [1h55 min]
+https://vimeo.com/eduardopires/caspnetcore-up-4
+CNetCoreNGUP-DH
+
+
+Docker Básico - [1h24 min]
+https://vimeo.com/eduardopires/caspnetcore-docker-1
+CNetCoreNGUP-BD
+
+
+Conteinerizando a aplicação com Docker - [2h41 min]
+https://vimeo.com/eduardopires/caspnetcore-docker-2
+CNetCoreNGUP-AZ
+
+
+Docker - Multi Stage Build, Load Balancing e Ferramentas - [1h29 min]
+https://vimeo.com/eduardopires/caspnetcore-docker-3
+CNetCoreNGUP-FX
+
+
+Deploy no IIS, Azure - Docker Swarm e Kubernetes - [1h49 min]
+https://vimeo.com/eduardopires/caspnetcore-deploy
+CNetCoreNGUP-YL
+
+
+Convertendo e atualizando o projeto para .NET Core 2 - [Em Breve]
+https://vimeo.com/eduardopires/caspnetcore-conversao-netcore-2
+CNetCoreNGUP-CT
+
+
+
+
+MATERIAL FINAL
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+Projeto Final - Completo V1.1 e V2.0
+http://epires.me/NGCore_Final 
+
+
+ 
+MATERIAL DOS MÓDULOS
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+Demo 01 - Modelagem do Domínio
+http://epires.me/NCNG_Demo01
+
+
+Demo 02 - Arquitetura e Camada MVC Completas
+http://epires.me/NCNG_Demo02
+
+
+Demo 02 - API REST
+http://epires.me/NCNG_Demo02API
+
+
+Demo 03 - Angular 2 StartupTemplate
+http://epires.me/NCNG_DemoNG1
+
+
+Demo 03 - Angular 2 - Eventos.IO (Navegação)
+http://epires.me/NCNG_DemoNG2
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+AULAS AO VIVO
+
+
+Prático 1 - Aula 1
+http://epires.me/NCNG_Abr172_P1
+
+
+Prático 2 - Aula 2
+http://epires.me/NCNG_P22

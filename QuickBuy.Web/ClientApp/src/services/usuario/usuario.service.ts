@@ -57,4 +57,9 @@ export class UsuarioService{
     }
      return this.http.post<Usuario>(this.baseURL + "api/usuario", body, { headers });
   }
+
+  public nomeUsuario():string{
+    return this._usuario.nome;
+}
+  
 }

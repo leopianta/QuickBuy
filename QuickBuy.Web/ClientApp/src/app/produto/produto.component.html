@@ -2,8 +2,11 @@
 <label for="inputNome" class="sr-only">Nome</label>
 <input type="text" id="inputNome"
                    name="nomeProduto"
-                   class="form-control mb-2 col-md-4"
-                   [ngClass] = ""
+                   class="form-control form-produto mb-2 col-md-4"
+                   [ngClass] = "{
+                    'is-invalid':nome.invalid && (nome.dirty || nome.touched),
+                    'is-valid':nome.valid && (nome.dirty || nome.touched)
+                    }"
                    placeholder="Nome do produto"
                    [(ngModel)]="produto.nome"
                    #nome="ngModel"
@@ -18,8 +21,11 @@
 <label for="inputDescricao" class="sr-only">Descrição</label>
 <input type="text" id="inputDescricao"
                    name="descricaoProduto"
-                   class="form-control mb-2 col-md-4"
-                   [ngClass] = ""
+                   class="form-control form-produto mb-2 col-md-4"
+                   [ngClass] = "{
+                    'is-invalid':descricao.invalid && (descricao.dirty || descricao.touched),
+                    'is-valid':descricao.valid && (descricao.dirty || descricao.touched)
+                    }"
                    placeholder="Descrição do produto"
                    [(ngModel)]="produto.descricao"
                    #descricao="ngModel"
@@ -34,8 +40,11 @@
 <label for="inputPreco" class="sr-only">Preço</label>                   
 <input type="number" id="inputPreco"
                    name="precoProduto"
-                   class="form-control mb-2 col-md-2"
-                   [ngClass] = ""
+                   class="form-control form-produto mb-2 col-md-2"
+                   [ngClass] = "{
+                    'is-invalid':preco.invalid && (preco.dirty || preco.touched),
+                    'is-valid':preco.valid && (preco.dirty || preco.touched)
+                    }"
                    placeholder="Preço"
                    [(ngModel)]="produto.preco"
                    #preco="ngModel"
@@ -49,12 +58,52 @@
 
 <div class="input-group mb-2">
     <div class="custom-file col-md-4">
-        <input type="file" class="custom-file-input" id="inputFile"/>
-        <label for="inputFile" class="custom-file-label">Escolha uma imagem</label>     
+        <input type="file" class="custom-file-input" id="inputFile" (change) = "inputChange($event.target.files)" />
+        <label for="inputFile" class="custom-file-label" >{{fileName}}</label> 
+        <span id='file-name'></span>          
     </div>                   
-</div>                   
+    <label class="col-md-1 ml-2" href="#">
+        <span class="spinner-border text-primary" role="status" aria-hidden="true" *ngIf="ativar_spinner_file"></span>        
+    </label>
+</div>   
 
-<button class="btn btn-primary btn-block col-md-1" type="submit" (click)="cadastrar()" [disabled]="ativar_spinner">
+<div class="alert alert-success col-md-4" *ngIf="arquivoEnviado">
+    <div>
+        <button type="button" class="close close-success-modal" data-dismiss="modal" aria-label="Close" (click)="fecharMsgArquivo(arquivoEnviado)">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    Arquivo enviado com sucesso!
+</div>
+
+<div class="alert alert-danger col-md-6" *ngIf="mensagemArquivo">
+    <div>
+        <button type="button" class="close close-danger-modal" data-dismiss="modal" aria-label="Close" (click)="fecharMsgArquivo()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {{mensagemArquivo}}
+</div>
+
+<button class="btn btn-primary btn-block col-md-1 mb-2" type="submit" (click)="cadastrar()" [disabled]="ativar_spinner">
     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
-    Cadastrar
+    Salvar
 </button>
+
+<div class="alert alert-danger col-md-4" *ngIf="mensagem">
+    <div>
+        <button type="button" class="close close-danger-modal" data-dismiss="modal" aria-label="Close" (click)="fecharMsgCadastro()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {{mensagem}}
+</div>
+
+<div class="alert alert-success col-md-4" *ngIf="produtoCadastrado">
+    <div>
+        <button type="button" class="close close-success-modal" data-dismiss="modal" aria-label="Close" (click)="fecharMsgCadastro(produtoCadastrado)">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    Produto cadastrado com sucesso!
+</div>
