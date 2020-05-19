@@ -1,0 +1,55 @@
+
+.form-produto {
+    margin-bottom: -1px;
+    border-color: #fbfbfb;
+}
+
+.form-produto:hover {
+    border-color:#b7b7b7;
+}
+
+.titulo{
+    color: #666;;
+}
+
+/* .custom-file-input:lang(en)~.custom-file-label::after {
+    content: "Selecionar";    
+    border-color: #fbfbfb;
+} */
+
+.custom-file-input:lang(en)~::after {
+    content: "Selecionar";    
+}
+
+/* .custom-file-label::before {
+    content: "Escolha a imagem do produto";    
+} */
+
+
+.invalid-feedback{
+    display: block;
+    color: white;
+    padding: 5px;
+    width: 26em;
+    background-color: rgb(211, 129, 129);
+    border-radius: 4px;
+}
+
+.valid-feedback{
+    display: block;
+    color: white;
+    padding: 5px;
+    width: 26em;
+    background-color: rgb(96, 169, 96);
+    border-radius: 4px;
+}
+
+
+.close-danger-modal{
+    color: rgb(128, 48, 48);
+}
+
+
+.close-success-modal{
+    color: rgb(85, 128, 85);
+}

@@ -1,0 +1,42 @@
+<div class="col-12" *ngIf="!produtos">
+  <img class="mt-5" src="../../../assets/img/loading.gif" style="display: block; margin-left: auto; margin-right: auto;" />
+</div>
+<h1 class="h4 titulo mb-4">Pesquisa de Produtos</h1>
+
+<div class="row mb-4" *ngIf="produtos">
+  <div class="col-sm-4" style="display: flex;">
+    <label class="h6 titulo" style="margin-top: 0.5em;">Filtrar: </label>
+    <input type="text" class="form-control ml-2" id="inputSearch" (change) = "filtrar($event.target.value)"/>
+  </div>
+  <!-- <div class="col-sm-2">
+    <button type="button" class="btn btn-outline-secondary" id="buttonSearch" (click) = "filtrar()">limpar</button>    
+  </div> -->
+</div>
+
+<div class="row" *ngIf="produtos">
+  <div class="col-sm-12">
+      <table class="table table-hover tabela">
+          <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Produto</th>
+                <th colspan="2">Descrição</th>
+                <th scope="col">Preço</th>
+                <th colspan="2">Imagem</th>
+                <th colspan="2">Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let prod of produtos">
+              <td scope="col">{{prod.id}}</td>
+              <td scope="col">{{prod.nome}}</td>
+              <td colspan="2">{{prod.descricao}}</td>
+              <td scope="col">{{prod.preco}}</td>
+              <td colspan="2">{{prod.nomeArquivo}}</td>
+                <td><a class="btn-sm btn-warning btn-text" style="cursor: pointer;">Editar</a></td>
+                <td><a class="btn-sm btn-danger btn-text" style="cursor: pointer;">Excluir</a></td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
