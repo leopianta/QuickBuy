@@ -10,6 +10,7 @@ import { ProdutoService } from 'src/services/produto/produto.service';
 
 export class PesquisaProdutoComponent implements OnInit{
 public produtos: Produto[];
+public arrProdutos: Produto[];
 
   ngOnInit(): void{
 
@@ -19,7 +20,8 @@ public produtos: Produto[];
     this.produtoService.obterTodosProdutos()
     .subscribe(
       produtos => {
-        this.produtos = produtos
+        this.produtos = produtos;
+        this.arrProdutos = produtos;
       },
       e => {
         console.log(e.error);
@@ -27,9 +29,9 @@ public produtos: Produto[];
     );
   }
 
-  public filtrar(filter: string){
+  public filtrar(filter: string){    
     if(filter.length == 0){
-      window.location.reload();
+      this.produtos = this.arrProdutos;
     }else{
       this.produtoService.obterTodosProdutos()
       .subscribe(
