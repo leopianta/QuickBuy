@@ -1,4 +1,4 @@
-﻿<h1 class="h4 titulo">Cadastro de Produto</h1>
+﻿<h1 class="h4 titulo mb-4">Cadastro de Produto</h1>
 <label for="inputNome" class="sr-only">Nome</label>
 <input type="text" id="inputNome"
                    name="nomeProduto"
@@ -85,10 +85,22 @@
     {{mensagemArquivo}}
 </div>
 
-<button class="btn btn-primary btn-block col-md-1 mb-2" type="submit" (click)="cadastrar()" [disabled]="ativar_spinner">
-    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
-    Salvar
-</button>
+        <button class="btn btn-primary col-md-1 mb-2" style = "margin-right: 1em;" type="submit" (click)="cadastrar()" [disabled]="ativar_spinner">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
+            <svg *ngIf="!ativar_spinner" class="bi bi-check" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+            </svg>
+            Salvar
+        </button>
+        
+        <button class="btn btn-danger col-md-1 mb-2" type="submit" [routerLink]="['/home-produto']">
+            <!-- <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span> -->
+            <!-- <svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"/>
+            </svg> -->
+            Cancelar
+        </button>
 
 <div class="alert alert-danger col-md-4" *ngIf="mensagem">
     <div>

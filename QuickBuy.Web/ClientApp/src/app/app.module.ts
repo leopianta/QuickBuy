@@ -32,7 +32,7 @@ import { PesquisaProdutoComponent } from './produto/pesquisa/pesquisa.produto.co
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'produto', component: ProdutoComponent},
-      { path: 'pesquisar-produto', component: PesquisaProdutoComponent},
+      { path: 'home-produto', component: PesquisaProdutoComponent},
       { path: 'entrar', component: LoginComponent },
       { path: 'novo-usuario', component: CadastroUsuarioComponent },
     ])

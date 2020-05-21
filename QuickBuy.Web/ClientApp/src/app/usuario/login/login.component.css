@@ -8,12 +8,12 @@
 
   .form-signin input {
     margin-bottom: -1px;
-    border-color: #fbfbfb;
+    border-color: #d3d8dd;
   }
 
-  .form-signin input:hover {
+  /* .form-signin input:hover {
     border-color:#b7b7b7;
-  }
+  } */
 
   .form-signin .form-control{
     position:relative;

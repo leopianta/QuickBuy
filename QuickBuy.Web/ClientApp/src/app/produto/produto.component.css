@@ -1,12 +1,13 @@
 ﻿
 .form-produto {
     margin-bottom: -1px;
-    border-color: #fbfbfb;
+    /* border-color: #fbfbfb; */
+    border-color:#d3d8dd;
 }
 
-.form-produto:hover {
+/* .form-produto:hover {
     border-color:#b7b7b7;
-}
+} */
 
 .titulo{
     color: #666;;

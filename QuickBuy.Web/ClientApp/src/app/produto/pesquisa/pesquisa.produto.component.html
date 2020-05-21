@@ -1,16 +1,23 @@
 <div class="col-12" *ngIf="!produtos">
   <img class="mt-5" src="../../../assets/img/loading.gif" style="display: block; margin-left: auto; margin-right: auto;" />
 </div>
-<h1 class="h4 titulo mb-4">Pesquisa de Produtos</h1>
+<h1 class="h4 titulo mb-4" *ngIf="produtos">Pesquisa de Produtos</h1>
 
 <div class="row mb-4" *ngIf="produtos">
-  <div class="col-sm-4" style="display: flex;">
-    <label class="h6 titulo" style="margin-top: 0.5em;">Filtrar: </label>
-    <input type="text" class="form-control ml-2" id="inputSearch" (change) = "filtrar($event.target.value)"/>
+  <div class="col-sm-12">
+    <div class="col-sm-4"  style="display: inline-flex;">
+      <label class="h6 titulo" style="margin-top: 0.5em;">Filtrar: </label>
+      <input type="text" class="form-control ml-2" id="inputSearch" (change) = "filtrar($event.target.value)"/> </div>
+      <div class="col-sm-2" style="float: right; text-align: right;">
+        <!-- <a [routerLink]='["/novo-produto"]' class="btn btn-primary ml-12" id="buttonNovoProduto" > -->
+          <a class="btn btn-primary ml-12" style="color: white;" id="buttonNovoProduto" (click) = "adicionarProduto()" >
+          <svg class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H4a.5.5 0 010-1h3.5V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+          <path fill-rule="evenodd" d="M7.5 8a.5.5 0 01.5-.5h4a.5.5 0 010 1H8.5V12a.5.5 0 01-1 0V8z" clip-rule="evenodd"/>
+          <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd"/>
+        </svg> Novo</a> 
+      </div>      
   </div>
-  <!-- <div class="col-sm-2">
-    <button type="button" class="btn btn-outline-secondary" id="buttonSearch" (click) = "filtrar()">limpar</button>    
-  </div> -->
 </div>
 
 <div class="row" *ngIf="produtos">
@@ -33,8 +40,8 @@
               <td colspan="2">{{prod.descricao}}</td>
               <td scope="col">{{prod.preco}}</td>
               <td colspan="2">{{prod.nomeArquivo}}</td>
-                <td><a class="btn-sm btn-warning btn-text" style="cursor: pointer;">Editar</a></td>
-                <td><a class="btn-sm btn-danger btn-text" style="cursor: pointer;">Excluir</a></td>
+                <td><a class="btn-sm btn-warning btn-text" style="cursor: pointer; color: white;" (click)="editarProduto(prod)">Editar</a></td>
+                <td><a class="btn-sm btn-danger btn-text" style="cursor: pointer; color: white;" (click)="deletarProduto(prod)">Excluir</a></td>
             </tr>
           </tbody>
       </table>
