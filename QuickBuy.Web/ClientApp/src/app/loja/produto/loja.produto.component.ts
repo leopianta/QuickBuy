@@ -10,10 +10,13 @@ import { Produto } from "src/app/model/produto";
 
 
 export class LojaProdutoComponent implements OnInit{
-    // public produtos: Produto[];
+    public produto: Produto;
 
     ngOnInit(): void {
-        
+        var produtoDetalhe = sessionStorage.getItem('produtoDetalhe');
+        if (produtoDetalhe){
+            this.produto = JSON.parse(produtoDetalhe);
+        }
     }
 
     constructor(private produtoServico: ProdutoService){
