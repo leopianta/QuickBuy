@@ -39,7 +39,7 @@
               <td scope="col">{{prod.nome}}</td>
               <td colspan="2">{{prod.descricao}}</td>
               <td scope="col">{{prod.preco}}</td>
-              <td colspan="2">{{prod.nomeArquivo}}</td>
+              <td colspan="2"><img class="card-top" src="../../../assets/arquivos/{{prod.nomeArquivo}}" width="40px" height="40px"/></td>
                 <td><a class="btn-sm btn-warning btn-text" style="cursor: pointer; color: white;" (click)="editarProduto(prod)">Editar</a></td>
                 <td><a class="btn-sm btn-danger btn-text" style="cursor: pointer; color: white;" (click)="deletarProduto(prod)">Excluir</a></td>
             </tr>

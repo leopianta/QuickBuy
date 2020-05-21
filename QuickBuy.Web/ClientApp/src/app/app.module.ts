@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { TruncateModule } from 'ng2-truncate';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -14,6 +15,8 @@ import { UsuarioService } from 'src/services/usuario/usuario.service';
 import { CadastroUsuarioComponent } from './usuario/cadastro/cadastro.usuario.component';
 import { ProdutoService } from '../services/produto/produto.service';
 import { PesquisaProdutoComponent } from './produto/pesquisa/pesquisa.produto.component';
+import { LojaPesquisaComponent } from './loja/pesquisa/loja.pesquisa.component';
+import { LojaProdutoComponent } from './loja/produto/loja.produto.component';
 
 @NgModule({
   declarations: [
@@ -23,16 +26,21 @@ import { PesquisaProdutoComponent } from './produto/pesquisa/pesquisa.produto.co
     ProdutoComponent,
     LoginComponent,
     CadastroUsuarioComponent,
-    PesquisaProdutoComponent
+    PesquisaProdutoComponent,
+    LojaPesquisaComponent, 
+    LojaProdutoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    TruncateModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'produto', component: ProdutoComponent},
-      { path: 'home-produto', component: PesquisaProdutoComponent},
+      // { path: 'produto', component: ProdutoComponent},
+      { path: 'produto', component: ProdutoComponent, canActivate: [GuardaRotas] },
+      { path: 'home-produto', component: PesquisaProdutoComponent, canActivate: [GuardaRotas] },
+      { path: 'loja-produto', component: LojaProdutoComponent},
       { path: 'entrar', component: LoginComponent },
       { path: 'novo-usuario', component: CadastroUsuarioComponent },
     ])

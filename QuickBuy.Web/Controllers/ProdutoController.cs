@@ -93,7 +93,7 @@ namespace QuickBuy.Web.Controllers
                 var nomeArquivo = formFile.FileName;
                 var extensao = nomeArquivo.Split('.').Last();
                 string novoNomeArquivo = GerarNovoNomeArquivo(nomeArquivo, extensao);
-                var pastaArquivos = _hostingEnvironment.WebRootPath + "\\arquivos\\";
+                var pastaArquivos = _hostingEnvironment.ContentRootPath + "\\ClientApp\\src\\assets\\arquivos\\";
                 var nomeCompleto = pastaArquivos + novoNomeArquivo;
 
                 using (var streamArquivo = new FileStream(nomeCompleto, FileMode.Create))

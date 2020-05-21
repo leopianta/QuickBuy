@@ -13,8 +13,7 @@ export class GuardaRotas implements CanActivate {
     }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {        
-        //Se usuário autenticado, retorna verdadeiro
-        
+        //Se usuário autenticado, retorna verdadeiro       
         
         if (this.usuarioServico.usuario_autenticado()) {            
             return true;
