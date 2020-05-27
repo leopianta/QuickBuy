@@ -3,7 +3,7 @@
             <div class="card">    
                 <a (click)="abrirProduto(prod)" style="cursor: pointer;">
                     <img class="img-card" src="../../../assets/arquivos/{{prod.nomeArquivo}}" width="50%" height="50%"/>
-                    <label class="titulo" style="margin-top: 2em;" title="{{prod.descricao}}">{{prod.descricao | truncate: 40}} </label>                
+                    <label class="titulo" style="margin-top: 2em;" title="{{prod.descricao}}">{{prod.descricao | truncate: 30}} </label>                
                     <hr>
                     <label class="titulo" title="{{prod.preco}}">R$ {{prod.preco}} </label>         
                 </a>  
