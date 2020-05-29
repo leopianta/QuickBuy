@@ -8,14 +8,20 @@
                     <th scope="col">Produto</th>
                     <th scope="col">Quantidade</th>
                     <th scope="col">Preço</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let prod of produtos">
-                    <td><img class="img-card" src="../../../assets/arquivos/{{prod.nomeArquivo}}" width="35%" height="12%"/></td>
-                    <td scope="col" style="width: 50%;">{{prod.descricao}}</td>
-                    <td scope="col" style="width: 10%;"><input class="form-control" type="number" id="inputQuantidade" style="width: 75%;"/></td>
-                    <td scope="col">R$ {{prod.preco}}</td>
+                    <tr *ngFor="let prod of produtos">
+                        <td><img class="img-card" src="../../../assets/arquivos/{{prod.nomeArquivo}}" width="35%" height="12%"/></td>
+                        <td scope="col" style="width: 50%;">{{prod.descricao}}</td>
+                        <td scope="col" style="width: 10%;">
+                            <input class="form-control" type="number" id="inputQuantidade" style="width: 75%;" 
+                                (change)="atualizarPreco(prod, $event.target.value)" [(ngModel)]="prod.quantidade" placeholder="1"/>
+                        </td>
+                        <td scope="col">R$ {{prod.preco | number:'1.0-2'}}</td>
+                        <td scope="col"><button class="btn btn-secondary btn-sm" (click)="remover(prod)">Excluir</button></td>                    
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -23,8 +29,8 @@
             <div class="row">
                 <div class="card">
                     <div class="card-header">Resumo</div>
-                    <div class="card-body">Total de R$ 1000,00
-                        <button class="btn btn-danger">Efetivar Compra</button>
+                    <div class="card-body"><strong> Total: R$ 1000,00</strong>
+                        <button class="btn btn-success mt-4">Efetivar Compra</button>
                     </div>
                 </div>
             </div>
