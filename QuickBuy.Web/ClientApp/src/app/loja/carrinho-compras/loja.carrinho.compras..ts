@@ -41,4 +41,9 @@ export class LojaCarrinhoCompras{
         localStorage.setItem("produtoLocalStorage", JSON.stringify(produtos)); 
     }
 
+    public temItensCarrinho(): boolean{
+        var itens = this.obterProdutos();
+        return (itens.length > 0);
+    }
+
 }

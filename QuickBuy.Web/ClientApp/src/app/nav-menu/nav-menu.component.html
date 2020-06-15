@@ -11,7 +11,7 @@
           <li class="nav-item menu-bar mr-2" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
             <a class="nav-link text-dark" [routerLink]='["/"]'>Home</a>
           </li>
-          <li class="nav-item menu-bar mr-2" [routerLinkActive]='["link-active"]'>
+          <li class="nav-item menu-bar mr-2" [routerLinkActive]='["link-active"]' *ngIf="usuario_administrador()">
             <a class="nav-link text-dark" [routerLink]='["/home-produto"]'>Produto</a>
           </li>
           <li class="nav-item menu-bar" [routerLinkActive]='["link-active"]' *ngIf="!usuarioLogado()">
@@ -28,6 +28,9 @@
               <!-- <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a> -->
             </div>
+          </li>
+          <li class="nav-item menu-bar" [routerLinkActive]='["link-active"]' *ngIf="usuarioLogado()">
+            <a class="nav-link text-dark" [routerLink]='["/loja-efetivar"]'>Carrinho</a>
           </li>
         </ul>
       </div>

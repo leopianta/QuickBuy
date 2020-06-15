@@ -40,13 +40,6 @@ export class LoginComponent implements OnInit {
                 this.mensagem = err.error;
                 this.ativar_spinner = false;
             }
-        );
-        
-        
-        
-        // if (this.usuario.email == "leo@gmail.com" && this.usuario.senha == "123") {
-        //     sessionStorage.setItem("usuario-autenticado", "1");
-        //     this.router.navigate([this.returnUrl])
-        // }
+        );            
     }
 }

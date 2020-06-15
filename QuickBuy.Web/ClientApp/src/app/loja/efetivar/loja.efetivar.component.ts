@@ -15,10 +15,12 @@ import { Produto } from "src/app/model/produto";
 export class LojaEfetivarComponent implements OnInit{
      public produtos: Produto[];
      public carrinhoCompras: LojaCarrinhoCompras;
+     public total: number;
 
     ngOnInit(): void {
         this.carrinhoCompras = new LojaCarrinhoCompras();
         this.produtos = this.carrinhoCompras.obterProdutos();
+        this.atualizarTotal();
     }
 
     public atualizarPreco(produto: Produto, quantidade: number){
@@ -27,8 +29,6 @@ export class LojaEfetivarComponent implements OnInit{
         }
 
         if(quantidade <= 0){
-            // quantidade = 1;
-            // produto.quantidade = quantidade;
             var retorno = confirm("Deseja retirar o produto do carrinho?");
             if (retorno ==  true){           
                 this.remover(produto);
@@ -37,6 +37,7 @@ export class LojaEfetivarComponent implements OnInit{
 
         produto.preco = produto.precoOriginal * quantidade;
         this.carrinhoCompras.atualizar(this.produtos);
+        this.atualizarTotal();
     }
 
     public remover(produto: Produto){
@@ -44,7 +45,12 @@ export class LojaEfetivarComponent implements OnInit{
         if (retorno ==  true){           
             this.carrinhoCompras.removerProduto(produto);
             this.produtos = this.carrinhoCompras.obterProdutos();
+            this.atualizarTotal();
         }
+    }
+
+    public atualizarTotal(){
+        this.total = this.produtos.reduce((x, produto) => x + produto.preco, 0);
     }
 
 
